@@ -1,0 +1,3 @@
+use shop
+
+db.product.find().sort({ price: -1 }).pretty()

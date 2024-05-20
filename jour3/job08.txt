@@ -1,0 +1,3 @@
+use shop
+
+db.category.find().limit(2).pretty()

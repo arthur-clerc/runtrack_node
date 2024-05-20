@@ -1,0 +1,7 @@
+use shop
+
+db.category.insertMany([
+  { name: "Vêtements", description: "Catégorie pour tous les types de vêtements" },
+  { name: "Chaussures", description: "Catégorie pour les chaussures" },
+  { name: "Accessoires", description: "Catégorie pour les accessoires divers" }
+])

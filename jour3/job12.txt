@@ -1,0 +1,8 @@
+use shop
+
+db.product.find({
+  $or: [
+    { price: { $gt: 14.99 } },
+    { quantity: { $gt: 100 } }
+  ]
+}).pretty()

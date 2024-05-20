@@ -1,0 +1,35 @@
+use shop
+
+db.product.aggregate([
+  {
+    $group: {
+      _id: "$category_id",
+      totalArticles: { $sum: 1 }
+    }
+  },
+  {
+    $sort: { totalArticles: 1 }
+  },
+  {
+    $limit: 1
+  },
+  {
+    $lookup: {
+      from: "category",
+      localField: "_id",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  {
+    $unwind: "$category"
+  },
+  {
+    $project: {
+      "_id": "$category._id",
+      "name": "$category.name",
+      "description": "$category.description",
+      "totalArticles": "$totalArticles"
+    }
+  }
+]).pretty()

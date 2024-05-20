@@ -1,0 +1,16 @@
+xcode-select --install 
+
+brew tap mongodb/brew 
+
+brew update
+
+brew install mongodb-community@7.0
+
+mongog --version
+
+brew services start mongodb/brew/mongodb-community
+
+mongosh
+
+showdbs
+

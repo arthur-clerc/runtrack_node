@@ -1,0 +1,5 @@
+use shop
+
+const categoryId = ObjectId("60c5c6c5d9a5b2c29e27b8e4");
+
+db.category.findOne({ _id: categoryId }).pretty()
